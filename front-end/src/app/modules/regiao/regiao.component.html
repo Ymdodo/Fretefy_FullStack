@@ -1,3 +1,74 @@
-<p>
-  regiao works!
-</p>
+<div class="container">
+  <h2 class="title">Cadastro de Regiões</h2>
+
+  <button class="btn-primary" (click)="abrirCadastro()">
+    + Cadastrar
+  </button>
+
+  <h2>Lista de Regiões</h2>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome da região</th>
+        <th>Ativo</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let regiao of regioes">
+        <td>{{ regiao.id }}</td>
+        <td>{{ regiao.nome }}</td>
+        <td>
+          <span *ngIf="regiao.ativo" style="color: green;">Ativo</span>
+          <span *ngIf="!regiao.ativo" style="color: red;">Inativo</span>
+        </td>
+        <td>
+          <button (click)="abrirCadastro(regiao)">Editar</button>
+          <button (click)="toggleAtivo(regiao)">
+            {{ regiao.ativo ? 'Desativar' : 'Ativar' }}
+          </button>
+          <button (click)="deletarRegiao(regiao.id)" class="btn-danger">🗑️ Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn-export" (click)="exportarExcel()">Excel</button>
+</div>
+
+
+<div class="modal" *ngIf="modalAberto">
+  <div class="modal-content">
+    <button class="close" (click)="fecharCadastro()">×</button>
+    <h3>Cadastro de região</h3>
+
+    <form [formGroup]="regiaoForm" (ngSubmit)="regiaoForm.get('id')?.value ? salvarEdicao() : salvarRegiao()">
+
+      <label for="nomeRegiao">Nome da região *</label>
+      <input id="nomeRegiao" type="text" formControlName="nome" class="input-field" />
+
+      <div class="locais-container">
+        <label>Locais da região</label>
+
+        <div formArrayName="cidades">
+          <div *ngFor="let cidade of regiaoForm.get('cidades')?.controls; let i = index" [formGroupName]="i"
+            class="cidade-item">
+            <select formControlName="nome">
+              <option *ngFor="let cidadeDisponivel of cidadesDisponiveis" [value]="cidadeDisponivel.nome">
+                {{ cidadeDisponivel.nome }} ({{ cidadeDisponivel.uf }})
+              </option>
+            </select>
+            <button type="button" (click)="removerCidade(i)">Remover</button>
+          </div>
+        </div>
+
+        <button type="button" (click)="adicionarCidade()">+ Adicionar Cidades</button>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="fecharCadastro()">Cancelar</button>
+        <button type="submit" class="btn-save" [disabled]="regiaoForm.invalid">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>

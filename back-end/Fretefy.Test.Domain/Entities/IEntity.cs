@@ -2,8 +2,8 @@
 
 namespace Fretefy.Test.Domain.Entities
 {
-    public interface IEntity
+    public interface IEntity<T>
     {
-        Guid Id { get; set; }
+        T Id { get; set; }
     }
 }

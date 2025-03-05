@@ -1,0 +1,189 @@
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #eef5ff;
+    border: 1px solid #0066cc;
+    color: #0066cc;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.styled-table th {
+    background-color: #eef5ff;
+    text-align: left;
+    padding: 10px;
+}
+
+.styled-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilização do Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    width: 480px;
+    max-width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    background: none;
+}
+
+/* Campos de entrada */
+.input-field,
+.select-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Seção das cidades */
+.locais-container {
+    margin-top: 15px;
+}
+
+.cidade-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Caixa de seleção de cidades */
+.cidade-item select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botão de remover cidade */
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #ff4d4d;
+    transition: color 0.2s;
+}
+
+.remove-btn:hover {
+    color: #cc0000;
+}
+
+/* Botão de adicionar cidade */
+.btn-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f5ff;
+    color: #0056b3;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #0056b3;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background: #e6f0ff;
+}
+
+/* Ações do modal */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    background: #e0e0e0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-save {
+    background: #004080;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-save:hover {
+    background: #003366;
+}
+
+.btn-export {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-export:hover {
+    background-color: #45a049;
+}

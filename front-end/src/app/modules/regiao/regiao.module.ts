@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { RegiaoRoutingModule } from './regiao-routing.module';
 import { RegiaoComponent } from './regiao.component';
-import { RegiaoRoutingModule } from './regiao.routing';
+import { CidadeSelectorComponent } from './cidade-selector.component';
 
 @NgModule({
+  declarations: [
+    RegiaoComponent,
+    CidadeSelectorComponent 
+  ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RegiaoRoutingModule
-  ],
-  declarations: [RegiaoComponent],
-  exports: [RegiaoComponent]
+  ]
 })
 export class RegiaoModule { }

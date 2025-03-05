@@ -1,0 +1,53 @@
+<div class="container">
+    <h2 class="title">Cadastro de Cidades</h2>
+
+    <button class="btn-primary" (click)="abrirCadastro()">
+        + Cadastrar
+    </button>
+
+    <h2 class="title">Lista de Cidades</h2>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome da cidade</th>
+                <th>Estado</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cidade of cidades">
+                <td>{{ cidade.id }}</td>
+                <td>{{ cidade.nome }}</td>
+                <td>{{ cidade.uf }}</td>
+                <td><button (click)="deletarCidade(cidade.id)" class="btn-danger">🗑 Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal" *ngIf="modalAberto">
+    <div class="modal-content">
+        <span class="close" (click)="fecharCadastro()">&times;</span>
+        <h3>Cadastro de Cidade</h3>
+
+        <form [formGroup]="cidadeForm" (ngSubmit)="salvarCidade()">
+            <label>Nome da cidade *</label>
+            <input type="text" formControlName="nome" class="input-field" />
+
+            <label>Estado (UF) *</label>
+            <select formControlName="uf" class="select-box">
+                <option *ngFor="let estado of estados" [value]="estado.sigla">
+                    {{ estado.nome }}
+                </option>
+            </select>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-cancel" (click)="fecharCadastro()">Cancelar</button>
+                <button type="submit" class="btn-save" [disabled]="cidadeForm.invalid">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>

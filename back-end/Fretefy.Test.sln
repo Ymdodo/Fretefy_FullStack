@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30503.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fretefy.Test.WebApi", "Fretefy.Test.WebApi\Fretefy.Test.WebApi.csproj", "{44547BB6-1EF0-4016-9041-E862CB6E12F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fretefy.Test.Domain", "Fretefy.Test.Domain\Fretefy.Test.Domain.csproj", "{C3B3BAE5-BA70-496B-B103-45CB1BB5051E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fretefy.Test.Infra", "Fretefy.Test.Infra\Fretefy.Test.Infra.csproj", "{65E1C626-EBE5-4AA8-A787-63DE1D012A41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreteFy.Test.Application", "FreteFy.Test.Application\FreteFy.Test.Application.csproj", "{5B84A804-3641-4523-A503-9823F64F05CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{65E1C626-EBE5-4AA8-A787-63DE1D012A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65E1C626-EBE5-4AA8-A787-63DE1D012A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65E1C626-EBE5-4AA8-A787-63DE1D012A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B84A804-3641-4523-A503-9823F64F05CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B84A804-3641-4523-A503-9823F64F05CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B84A804-3641-4523-A503-9823F64F05CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B84A804-3641-4523-A503-9823F64F05CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
